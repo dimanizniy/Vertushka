@@ -52,41 +52,6 @@ The project is fully containerized using **Docker**, utilizes **PostgreSQL** for
 | `/mailing [text]` | Sends a broadcast message to all users |
 | `/stats` | Displays global statistics |
 
----
-
-## 🧩 Project Architecture
-```
-project/
-├── bot/
-│ ├── main.py # Bot entry point
-│ ├── handlers/
-│ │ ├── curator.py # Curator commands
-│ │ ├── organizer.py # Organizer commands
-│ │ ├── admin.py # Admin commands
-│ │ └── common.py # Shared commands (/start, /help, /free)
-│ └── utils/
-│ ├── decorators.py # Role checking decorators
-│ └── keyboards.py # Inline keyboard layouts
-│
-├── core/
-│ ├── config.py # Loads environment variables from .env
-│ └── database.py # PostgreSQL connection and queries
-│
-├── models/
-│ ├── init.py
-│ ├── user.py # User model
-│ ├── group.py # Group model
-│ ├── station.py # Station model
-│ └── reward.py # Reward model
-│
-├── .env # Environment variables
-├── Dockerfile # Docker image for Python app
-├── docker-compose.yml # Service composition (bot + DB)
-├── requirements.txt # Python dependencies
-└── README.md
-```
----
-
 ## 🐳 Deployment via Docker
 
 ### 1️⃣ Create a `.env` file
